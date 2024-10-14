@@ -10,3 +10,4 @@ RUN apt-get update && apt-get install -y curl jq wget \
     && echo "Downloading '$JAR_REMOTE_PATH'. This may take a few minutes..." \
     && wget $JAR_REMOTE_PATH -qO $APP_HOME/waves.jar
 EXPOSE 6860 6869
+ENTRYPOINT ["java", "-jar", "waves.jar", "waves.conf"]
